@@ -23,10 +23,5 @@
 		"markdown-it-sup": "^1.0.0",
 		"pinia": "^2.0.11",
 		"vue3-social-share": "^0.1.7"
-	},
-	"uni_modules": {
-	    "encrypt": [
-			"uniCloud-aliyun/cloudfunctions/getPosts/index.js"
-	    ]  
 	}
 }
