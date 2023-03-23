@@ -1,0 +1,32 @@
+{
+	"name": "myblog",
+	"version": "1.0.0",
+	"description": "个人博客",
+	"main": "index.js",
+	"author": "西梁",
+	"license": "MIT",
+	"devDependencies": {
+		"@vue/shared": "^3.2.31",
+		"unplugin-auto-import": "^0.5.11",
+		"unplugin-vue-components": "^0.17.18",
+		"vite-plugin-style-import": "1.4.1"
+	},
+	"dependencies": {
+		"@vicons/fa": "^0.12.0",
+		"@vicons/utils": "^0.1.4",
+		"@vue/reactivity": "^3.2.41",
+		"dayjs": "^1.10.8",
+		"element-plus": "^2.1.4",
+		"github-markdown-css": "^5.1.0",
+		"markdown-it": "^12.3.2",
+		"markdown-it-sub": "^1.0.0",
+		"markdown-it-sup": "^1.0.0",
+		"pinia": "^2.0.11",
+		"vue3-social-share": "^0.1.7"
+	},
+	"uni_modules": {
+	    "encrypt": [
+			"uniCloud-aliyun/cloudfunctions/getPosts/index.js"
+	    ]  
+	}
+}

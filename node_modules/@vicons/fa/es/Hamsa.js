@@ -1,0 +1,23 @@
+import { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, defineComponent } from 'vue'
+const _hoisted_1 = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+  viewBox: '0 0 512 512'
+}
+const _hoisted_2 = /*#__PURE__*/ _createElementVNode(
+  'path',
+  {
+    d: 'M509.34 307.25C504.28 295.56 492.75 288 480 288h-64V80c0-22-18-40-40-40s-40 18-40 40v134c0 5.52-4.48 10-10 10h-20c-5.52 0-10-4.48-10-10V40c0-22-18-40-40-40s-40 18-40 40v174c0 5.52-4.48 10-10 10h-20c-5.52 0-10-4.48-10-10V80c0-22-18-40-40-40S96 58 96 80v208H32c-12.75 0-24.28 7.56-29.34 19.25a31.966 31.966 0 0 0 5.94 34.58l102.69 110.03C146.97 490.08 199.69 512 256 512s109.03-21.92 144.72-60.14L503.4 341.83a31.966 31.966 0 0 0 5.94-34.58zM256 416c-53.02 0-96-64-96-64s42.98-64 96-64s96 64 96 64s-42.98 64-96 64zm0-96c-17.67 0-32 14.33-32 32s14.33 32 32 32s32-14.33 32-32s-14.33-32-32-32z',
+    fill: 'currentColor'
+  },
+  null,
+  -1
+  /* HOISTED */
+)
+const _hoisted_3 = [_hoisted_2]
+export default defineComponent({
+  name: 'Hamsa',
+  render: function render(_ctx, _cache) {
+    return _openBlock(), _createElementBlock('svg', _hoisted_1, _hoisted_3)
+  }
+})

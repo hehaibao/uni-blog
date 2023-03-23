@@ -1,0 +1,39 @@
+body, input, button, textarea, select {
+    font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei Mono", "Noto Sans CJK SC", "Source Han Sans CN", SimSun, sans-serif;
+}
+
+a {
+    color: #3b8bba;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #265778;
+}
+
+#header, #main {
+    margin: 0 auto;
+    max-width: 768px;
+}
+
+#header {
+    margin: 2em auto;
+    padding: 1em 0 2em;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    line-height: 1.5;
+}
+
+#header h1 {
+    margin: 0;
+    color: #444;
+    font-weight: 300;
+    font-size: 300%;
+}
+
+#header h2 {
+    margin: 0;
+    color: #666;
+    font-weight: 300;
+    font-size: 125%;
+}

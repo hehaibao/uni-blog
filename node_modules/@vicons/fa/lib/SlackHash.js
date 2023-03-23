@@ -1,0 +1,25 @@
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
+const vue_1 = require('vue')
+const _hoisted_1 = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+  viewBox: '0 0 448 512'
+}
+const _hoisted_2 = /*#__PURE__*/ (0, vue_1.createElementVNode)(
+  'path',
+  {
+    d: 'M446.2 270.4c-6.2-19-26.9-29.1-46-22.9l-45.4 15.1l-30.3-90l45.4-15.1c19.1-6.2 29.1-26.8 23-45.9c-6.2-19-26.9-29.1-46-22.9l-45.4 15.1l-15.7-47c-6.2-19-26.9-29.1-46-22.9c-19.1 6.2-29.1 26.8-23 45.9l15.7 47l-93.4 31.2l-15.7-47c-6.2-19-26.9-29.1-46-22.9c-19.1 6.2-29.1 26.8-23 45.9l15.7 47l-45.3 15c-19.1 6.2-29.1 26.8-23 45.9c5 14.5 19.1 24 33.6 24.6c6.8 1 12-1.6 57.7-16.8l30.3 90L78 354.8c-19 6.2-29.1 26.9-23 45.9c5 14.5 19.1 24 33.6 24.6c6.8 1 12-1.6 57.7-16.8l15.7 47c5.9 16.9 24.7 29 46 22.9c19.1-6.2 29.1-26.8 23-45.9l-15.7-47l93.6-31.3l15.7 47c5.9 16.9 24.7 29 46 22.9c19.1-6.2 29.1-26.8 23-45.9l-15.7-47l45.4-15.1c19-6 29.1-26.7 22.9-45.7zm-254.1 47.2l-30.3-90.2l93.5-31.3l30.3 90.2l-93.5 31.3z',
+    fill: 'currentColor'
+  },
+  null,
+  -1
+  /* HOISTED */
+)
+const _hoisted_3 = [_hoisted_2]
+exports.default = (0, vue_1.defineComponent)({
+  name: 'SlackHash',
+  render: function render(_ctx, _cache) {
+    return (0, vue_1.openBlock)(), (0, vue_1.createElementBlock)('svg', _hoisted_1, _hoisted_3)
+  }
+})

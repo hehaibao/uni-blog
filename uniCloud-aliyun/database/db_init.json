@@ -1,0 +1,362 @@
+{
+    "attachments": {
+        "data": [
+            {
+                "url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b3a9d053-eefd-45be-8142-88ff822c08ea/c7f2e6da-4f15-433f-9160-d718f70e60a0.jpg",
+                "name": "nopic.jpg",
+                "size": 23787,
+                "type": "image/jpeg",
+                "fileType": "image",
+                "cloudPath": "1666678195971_0.jpg",
+                "created_date": 1666678196659
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                },
+                "name": {
+                    "description": "附件名称"
+                },
+                "size": {
+                    "description": "附件大小"
+                },
+                "type": {
+                    "description": "附件格式"
+                },
+                "fileType": {
+                    "description": "附件类型"
+                },
+                "url": {
+                    "description": "附件地址"
+                },
+                "cloudPath": {
+                    "description": "云文件名"
+                },
+                "created_date": {
+                    "bsonType": "timestamp",
+                    "description": "创建时间"
+                }
+            }
+        }
+    },
+    "categorys": {
+        "data": [
+            {
+                "name": "前端技术",
+                "created_date": 1666663065710
+            },
+            {
+                "name": "后端技术",
+                "created_date": 1666667598873
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                },
+                "name": {
+                    "description": "分类名称"
+                },
+                "created_date": {
+                    "description": "创建时间"
+                }
+            }
+        }
+    },
+    "labels": {
+        "data": [
+            {
+                "name": "JavaScript",
+                "created_date": 1666663056396
+            },
+            {
+                "name": "HTML5",
+                "created_date": 1666247214747
+            },
+            {
+                "name": "CSS3",
+                "created_date": 1666247221300
+            },
+            {
+                "name": "Vue.js",
+                "created_date": 1666247228614
+            },
+            {
+                "name": "React",
+                "created_date": 1666247244948
+            },
+            {
+                "name": "uni-app",
+                "created_date": 1666247286240
+            },
+            {
+                "name": "uniCloud",
+                "created_date": 1666247294424
+            },
+            {
+                "name": "Node.js",
+                "created_date": 1666247303400
+            },
+            {
+                "name": "PHP",
+                "created_date": 1666247313040
+            },
+            {
+                "name": "MySQL",
+                "created_date": 1666247319989
+            },
+            {
+                "name": "Webpack",
+                "created_date": 1666324788256
+            },
+            {
+                "name": "Vite",
+                "created_date": 1666324769171
+            },
+            {
+                "name": "wordpress",
+                "created_date": 1666686937523
+            },
+            {
+                "name": "Git",
+                "created_date": 1666687790540
+            },
+            {
+                "name": "AngularJS",
+                "created_date": 1666690020542
+            },
+            {
+                "name": "Centos",
+                "created_date": 1666746012613
+            },
+            {
+                "name": "Vim",
+                "created_date": 1666747660092
+            },
+            {
+                "name": "Gulp",
+                "created_date": 1666751336221
+            },
+            {
+                "name": "Babel",
+                "created_date": 1666771790402
+            },
+            {
+                "name": "jQuery",
+                "created_date": 1666835726894
+            },
+            {
+                "name": "Zepto",
+                "created_date": 1666835735455
+            },
+            {
+                "name": "ECharts",
+                "created_date": 1666849470855
+            },
+            {
+                "name": "SEO",
+                "created_date": 1666850204312
+            },
+            {
+                "name": "Eslint",
+                "created_date": 1666862012223
+            },
+            {
+                "name": "TypeScript",
+                "created_date": 1666862026734
+            },
+            {
+                "name": "Python",
+                "created_date": 1667199052277
+            },
+            {
+                "name": "ECMAScript",
+                "created_date": 1667199087925
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                },
+                "name": {
+                    "description": "标签名称"
+                },
+                "created_date": {
+                    "description": "创建时间"
+                }
+            }
+        }
+    },
+    "links": {
+        "data": [
+            {
+                "name": "现在的博客",
+                "link": "http://www.hehaibao.vip",
+                "created_date": 1667436984865,
+                "isApproved": true
+            },
+            {
+                "name": "以前的博客",
+                "link": "http://www.hehaibao.com",
+                "created_date": 1667440525554,
+                "isApproved": true
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "required": [
+                "name",
+                "link"
+            ],
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                },
+                "name": {
+                    "description": "链接名称"
+                },
+                "link": {
+                    "description": "链接地址"
+                },
+                "created_date": {
+                    "description": "创建时间"
+                },
+                "isApproved": {
+                    "description": "是否通过审核，true：已审核，false：待审核"
+                }
+            }
+        }
+    },
+    "posts": {
+        "data": [
+            {
+                "user_id": "6350bc8b737e2800018fdefd",
+                "title": "MySQL错误Another MySQL daemon already running with the same unix socket",
+                "abstract": "之前遇到RT这个问题后，导致数据库错误，然后在国外网站发现了一个解决方法，记录如下： 原因： 多个Mysql进程使用了同一个socket。 解决方法： 直接把mysql.sock文件改名即可。也可以删",
+                "categorys": [
+                    "后端技术"
+                ],
+                "labels": [
+                    "MySQL"
+                ],
+                "page_view": 412,
+                "sort": 0,
+                "created_date": 1406736000000,
+                "status": 1,
+                "thumbnail": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b3a9d053-eefd-45be-8142-88ff822c08ea/c7f2e6da-4f15-433f-9160-d718f70e60a0.jpg",
+                "content": "之前遇到RT这个问题后，导致数据库错误，然后在国外网站发现了一个解决方法，记录如下：\n\n<strong>原因：</strong>\n\n多个Mysql进程使用了同一个socket。\n\n<strong>解决方法：</strong>\n\n直接把mysql.sock文件改名即可。也可以删除，推荐改名。\n\n<code>SSH</code>里输入下列命令即可解决：\n\n<pre lang=\"html\" line=\"1\" escaped=\"true\">\n# mv /var/lib/mysql/mysql.sock /var/lib/mysql/mysql.sock.bak\n# service mysqld start\n</pre>\n\n如有更好或者其他的方法可以解决，欢迎不吝赐教哦~",
+                "html": "<p>之前遇到RT这个问题后，导致数据库错误，然后在国外网站发现了一个解决方法，记录如下：</p>\n<p><strong>原因：</strong></p>\n<p>多个Mysql进程使用了同一个socket。</p>\n<p><strong>解决方法：</strong></p>\n<p>直接把mysql.sock文件改名即可。也可以删除，推荐改名。</p>\n<p><code>SSH</code>里输入下列命令即可解决：</p>\n<pre lang=\"html\" line=\"1\" escaped=\"true\">\n# mv /var/lib/mysql/mysql.sock /var/lib/mysql/mysql.sock.bak\n# service mysqld start\n</pre>\n<p>如有更好或者其他的方法可以解决，欢迎不吝赐教哦~</p>\n",
+                "updated_date": 1666681134194,
+                "is_del": false,
+                "password": ""
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "required": [
+                "title",
+                "created_date"
+            ],
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                },
+                "user_id": {
+                    "description": "发布者 ID"
+                },
+                "title": {
+                    "bsonType": "string",
+                    "description": "文章标题"
+                },
+                "abstract": {
+                    "bsonType": "string",
+                    "description": "文章摘要"
+                },
+                "categorys": {
+                    "bsonType": "array",
+                    "description": "文章分类，可多选，直接记录分类名"
+                },
+                "labels": {
+                    "bsonType": "array",
+                    "description": "文章标签，可多选，直接记录标签名"
+                },
+                "page_view": {
+                    "bsonType": "number",
+                    "description": "浏览量"
+                },
+                "sort": {
+                    "bsonType": "number",
+                    "description": "排序值，越大越靠前"
+                },
+                "created_date": {
+                    "bsonType": "timestamp",
+                    "description": "发布时间，可手动选择"
+                },
+                "updated_date": {
+                    "bsonType": "timestamp",
+                    "description": "更新时间，系统自动生成"
+                },
+                "status": {
+                    "bsonType": "number",
+                    "description": "文章状态 1:已发布，2:草稿箱"
+                },
+                "password": {
+                    "bsonType": "string",
+                    "description": "访问密码，为空则不需要密码直接访问"
+                },
+                "thumbnail": {
+                    "bsonType": "string",
+                    "description": "封面图"
+                },
+                "content": {
+                    "bsonType": "string",
+                    "description": "内容 markdown 格式"
+                },
+                "html": {
+                    "bsonType": "string",
+                    "description": "内容 html 格式"
+                },
+                "is_del": {
+                    "bsonType": "bool",
+                    "description": "是否已删除"
+                },
+                "type": {
+                    "bsonType": "number",
+                    "description": "类型 1:文章，2:项目"
+                }
+            }
+        }
+    },
+    "uni-id-users": {
+        "data": [
+            {
+                "username": "admin",
+                "password": "e8fb5842d2a30d9bef904312496ad64594e78055",
+                "dcloud_appid": [
+                    "__UNI__018DE1C"
+                ],
+                "register_date": 1666235531283,
+                "register_ip": "58.210.207.58",
+                "token": [
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MzUwYmM4YjczN2UyODAwMDE4ZmRlZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImlhdCI6MTY2OTI4ODM3MSwiZXhwIjoxNjcxODgwMzcxfQ.stNXyysZIYsj9L7PHYvGhqrdOj3Ar-rWMYgb95FtbqM"
+                ],
+                "last_login_date": 1670587649867,
+                "last_login_ip": "127.0.0.1",
+                "login_ip_limit": []
+            }
+        ]
+    }
+}

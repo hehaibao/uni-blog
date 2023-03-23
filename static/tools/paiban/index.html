@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>在线文字自动排版工具</title>
+<meta name="keywords" content="文字排版,在线排版,文字排版工具,文字自动排版工具,一键排版" />
+<meta name="description" content="文字排版、在线排版、文字排版工具、文字自动排版工具、一键排版，是在线投稿、在线文字自动排版首选。" />
+<link rel="stylesheet" href="static/css/layout.css" />
+</head>
+
+<body onUnload="javascript:gt.saveOption();" onkeydown="KeyDown();" onResize="javascript:resize();">
+<div style="margin: 15px;">
+  <div style="display: none;" id="gtform">
+    <div class="line"></div>
+    <div id="toolbar" style="width: 100%; text-align: right;">
+      <div style="float: right;"><a href="javascript:void(0);" onClick="javascript:run();" id="button"><img border="0" src="static/picture/0.gif" style="margin: 0px 0px 4px 4px; display: none;" id="sbi_0" /><img border="0" src="static/picture/1.gif" style="margin: 0px 0px 4px 4px;" id="sbi_1" onMouseOver="showButtonImg(2);" /><img border="0" src="static/picture/2.gif" style="margin: 0px 0px 4px 4px; display: none;" id="sbi_2" onMouseOut="showButtonImg(1);" /></a>
+      </div>
+      <div class="option">
+        <div style="margin: 0 3px 0 6px;">
+          <input type="checkbox" id="xx_bd">
+          <label for="xx_bd">标点修正</label>
+		  
+          <input type="checkbox" id="xx_blx" checked>
+          <label for="xx_blx">波浪线修正</label>
+		  
+          <select id="linespaceSelect">
+            <option value="1">段落间无空行</option>
+            <option value="2" selected>段落间空一行</option>
+            <option value="3">段落间空两行</option>
+            <option value="0">不调整换行</option>
+          </select>
+		  
+          <select id="fstStringSelect" onChange="javascript:showfstStringSpan()">
+            <option value="1">不调整段落缩进</option>
+            <option value="2" selected>缩进：全角×2</option>
+            <option value="3">缩进：半角×4</option>
+            <option value="4">删首尾空格</option>
+            <option value="0">自定义缩进</option>
+          </select>
+		  
+          <span id="fstStringSpan" style="display: none;">
+			<input type="text" value="" id="fstString" style="width: 30px;" />
+          </span>
+        </div>
+        <div style="margin: 3px 6px 0;">
+          <a href="javascript:void(0);" style="color: #999999;" onClick="javascript:gt.clear();">清空文本</a>
+          全角与半角：
+          <input type="radio" name="quanjiao" value="0" id="quanjiao_no" style="margin-top: 4px;" checked />
+          <label for="quanjiao_no">不转换</label>
+          <input type="radio" name="quanjiao" value="1" id="quanjiao_q" style="margin-top: 4px;" />
+          <label for="quanjiao_q">到全角</label>
+          <input type="radio" name="quanjiao" value="2" id="quanjiao_b" style="margin-top: 4px;" />
+          <label for="quanjiao_b">到半角</label>
+        </div>
+      </div>
+    </div>
+    <textarea name="text" id="textbox" style="width: 100%; height: 80%; padding: 4px; line-height: 140%; background-color: #f6f6f6; margin-bottom: 4px; border-width: 1px; border-style: solid; border-color: gray;"></textarea>
+    <div style="float: right;">
+      <input type="checkbox" id="selectall" checked>
+      <label for="selectall">排版后全选</label>
+    </div>
+  </div>
+  <div class="line"></div>
+  <span id="msg">加载中，请稍候…</span>
+</div>
+<script>var fast = true;</script>
+<script src="static/js/main.js"></script>
+<script src="static/js/gt.js"></script>
+<script src="static/js/b2q.js"></script>
+</body>
+</html>

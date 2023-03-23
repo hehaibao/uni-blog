@@ -1,0 +1,25 @@
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
+const vue_1 = require('vue')
+const _hoisted_1 = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+  viewBox: '0 0 512 512'
+}
+const _hoisted_2 = /*#__PURE__*/ (0, vue_1.createElementVNode)(
+  'path',
+  {
+    d: 'M260.353 254.878L131.538 33.1a2.208 2.208 0 0 0-3.829.009L.3 254.887a2.234 2.234 0 0 0 0 2.235L129.116 478.9a2.208 2.208 0 0 0 3.83-.009l127.412-221.778a2.239 2.239 0 0 0-.005-2.235zm39.078-25.713a2.19 2.19 0 0 0 1.9 1.111h66.509a2.226 2.226 0 0 0 1.9-3.341L259.115 33.111a2.187 2.187 0 0 0-1.9-1.111h-66.508a2.226 2.226 0 0 0-1.9 3.341zM511.7 254.886L384.9 33.112A2.2 2.2 0 0 0 382.99 32h-66.6a2.226 2.226 0 0 0-1.906 3.34L440.652 256L314.481 476.66a2.226 2.226 0 0 0 1.906 3.34h66.6a2.2 2.2 0 0 0 1.906-1.112L511.7 257.114a2.243 2.243 0 0 0 0-2.228zm-145.684 30.031h-66.508a2.187 2.187 0 0 0-1.9 1.111l-108.8 190.631a2.226 2.226 0 0 0 1.9 3.341h66.509a2.187 2.187 0 0 0 1.9-1.111l108.8-190.631a2.226 2.226 0 0 0-1.901-3.341z',
+    fill: 'currentColor'
+  },
+  null,
+  -1
+  /* HOISTED */
+)
+const _hoisted_3 = [_hoisted_2]
+exports.default = (0, vue_1.defineComponent)({
+  name: 'Hive',
+  render: function render(_ctx, _cache) {
+    return (0, vue_1.openBlock)(), (0, vue_1.createElementBlock)('svg', _hoisted_1, _hoisted_3)
+  }
+})

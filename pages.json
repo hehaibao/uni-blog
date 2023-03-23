@@ -1,0 +1,137 @@
+{
+	"pages": [{
+		"path": "pages/front/news",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/front/detail",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/front/links",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/front/tools",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/front/webview",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"rightWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/front/project",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/error/404",
+		"style": {
+			"topWindow": false,
+			"leftWindow": false,
+			"navigationStyle": "custom"
+		}
+	}],
+	"subPackages": [{
+		"root": "pages/admin",
+		"pages": [{
+			"path": "login",
+			"style": {
+				"topWindow": false,
+				"leftWindow": false,
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "index",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "posts",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "writing",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "categorys",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "labels",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "links",
+			"style": {
+				"rightWindow": false,
+				"navigationStyle": "custom"
+			}
+		}]
+	}],
+	"topWindow": {
+		"path": "windows/topWindow",
+		"style": {
+			"height": "60px"
+		},
+		"matchMedia": {
+			"minWidth": 0
+		}
+	},
+	"leftWindow": {
+		"path": "windows/leftWindow",
+		"style": {
+			"width": "0"
+		},
+		"matchMedia": {
+			"minWidth": 0
+		}
+	},
+	"rightWindow": {
+		"path": "windows/rightWindow",
+		"style": {
+			"width": "0"
+		},
+		"matchMedia": {
+			"minWidth": 0
+		}
+	},
+	"easycom": {
+		"autoscan": true
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "海宝的博客",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>身份证件加水印 - ID card watermark</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+<meta name="description" content="身份证件加水印 - ID card watermark" />
+
+<link rel="stylesheet" href="static/css/pure-min_2.css">
+<link rel="stylesheet" href="static/css/style_2.css">
+
+<style>
+#workspace {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    user-select: none;
+}
+
+#image-layer img {
+    display: block;
+    width: 100%;
+}
+#text-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#file-form {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #eee;
+    list-style: none;
+    font-size: 14px;
+}
+
+li {
+    clear: both;
+    overflow: hidden;
+    padding: .5em 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pure-form {
+    margin-left: 20px;
+}
+
+.pure-form label {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+}
+
+.pure-form .name {
+    float: left;
+    margin: 6px 0;
+}
+
+input {
+    float: right;
+    text-align: right;
+    margin-top: 9px;
+    margin-top: 0;
+    width: 5em;
+}
+
+input[type="range"] {
+    margin-top: 8px;
+}
+
+.value {
+    float: right;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+
+#wm_text {
+    width: 100%;
+}
+
+#generate {
+    margin: 1em 0;
+}
+.tips {
+	font-size: 12px;
+	color: #999;
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+    <h1>身份证件加水印</h1>
+    <h2>ID card watermark</h2>
+</div>
+
+<div id="main" class="pure-g">
+    <div class="pure-u-1-2">
+        <div id="workspace">
+            <div id="image-layer"></div>
+            <canvas id="text-layer"></canvas>
+        </div>
+        <p><button id="selectbtn" class="pure-button pure-button-primary" type="button">选择图片</button></p>
+		<form id="file-form"><input type="file" name="selectfile" id="selectfile" accept="image/*" /></form>
+    </div>
+    <div class="pure-u-1-2">
+        <form class="pure-form" id="settigns-form">
+            <ul>
+                <li><label><span class="name">文字</span><textarea type="text" id="wm_text" name="text">仅提供×××，申请办理×××，他用无效</textarea></label></li>
+                <li><label><span class="name">字体大小</span><input type="number" name="size" value="50" min="1" /></label></li>
+                <li><label><span class="name">颜色</span><input type="color" name="color" value="#000000" /></label></li>
+                <li><label><span class="name">透明度</span><input type="range" name="opacity" value="0.7" min="0.1" max="1" step="0.1" /><span class="value"></span></label></li>
+            </ul>
+
+            <button id="generate" class="pure-button pure-button-primary" disabled>生成图片</button>
+            <a id="save" class="pure-button" style="display:none" download="tool_mcheng_cn_id_card_watermark.png">下载图片</a>
+			<p class="tips">提示：全部过程均在本地进行,不在云端存储您的任何信息</p>
+		</form>
+    </div>
+</div>
+
+<script>
+if (!window.FileReader) {
+    document.getElementById("main").innerHTML = "您使用的浏览器 Out 了。";
+}
+
+function $(s) {
+    return document.getElementById(s);
+}
+
+var selectBtn = $("selectbtn");
+var selectFile = $("selectfile");
+var settingsForm = $("settigns-form");
+var textLayer = $("text-layer");
+var textCtx = textLayer.getContext("2d");
+var x = 0;
+var y = 0;
+var timer;
+var img;
+var w;
+var h;
+
+function drawText(context) {
+    if (!img) return;
+
+    var ctx = context || textCtx;
+    var text = settingsForm.text.value;
+    var size = parseInt(settingsForm.size.value);
+    var top = 0;
+    var width;
+
+    if (!context) ctx.clearRect(0, 0, w, h);
+
+    ctx.globalAlpha = settingsForm.opacity.value;
+    ctx.textBaseline = "top";
+    ctx.fillStyle = settingsForm.color.value;
+    ctx.font = size + "px/1 ' Microsoft Yahei'";
+
+    var strArr = [];
+    var textLen = 0;
+
+    while (text.length) {
+        textLen = 0;
+
+        while (textLen < text.length && ctx.measureText(text.substring(0, textLen + 1)).width < textLayer.width) {
+            textLen++;
+        };
+
+        strArr.push(text.substring(0, textLen));
+        text = text.substring(textLen);
+    }
+
+    top = (textLayer.height - strArr.length * size) / 2;
+
+    strArr.forEach(function(str) {
+        ctx.fillText(str, 0, top);
+
+        top += size;
+    });
+
+    var lastLineWidth = ctx.measureText(strArr[strArr.length - 1]).width;
+    var fillLineHeight = size / 5;
+    ctx.fillRect(lastLineWidth, top - ((size - fillLineHeight) / 2), w - lastLineWidth - (size / 10), fillLineHeight);
+}
+
+function preventDefault(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+}
+
+function readFile(file, callback) {
+    var reader = new FileReader();
+
+    reader.onload = function(evt) {
+        callback && callback(null, evt);
+    };
+
+    reader.onerror = function(evt) {
+        switch (evt.target.error.code) {
+            case evt.target.error.NOT_FOUND_ERR:
+                alert("错误：文件未找到！");
+                break;
+            case evt.target.error.NOT_READABLE_ERR:
+                alert("错误：文件无法读取。");
+                break;
+            case evt.target.error.ABORT_ERR:
+                alert("错误：文件读取被中断。");
+                break;
+            case evt.target.error.ENCODING_ERR:
+                alert("错误：文件无法读取。");
+                break;
+            case evt.target.error.SECURITY_ERR:
+                lert("错误：文件被锁定。");
+                break;
+            default:
+                alert("错误：文件读取失败。");
+        }
+        callback && callback(evt);
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function fileHandler(evt) {
+    preventDefault(evt);
+
+    var file = evt.target.files[0];
+
+    if (!file) {
+        alert("错误：没有选择任何文件。");
+        return;
+    } else if (file.type.indexOf("image/") === -1) {
+        alert("错误：请选择图像格式文件。");
+        return;
+    } else {
+        selectBtn.innerHTML = "正在加载…";
+        selectBtn.disabled = "disabled";
+
+        readFile(file, function(error, event) {
+            selectBtn.innerHTML = "选择图片";
+            selectBtn.removeAttribute("disabled");
+            $("file-form").reset();
+
+            if (error) return;
+
+            document.getElementById('save').style.display = 'none';
+
+            var oldImg = img;
+
+            img = new Image();
+
+            img.onload = function() {
+                if (oldImg) oldImg.parentNode.removeChild(oldImg);
+
+                $("image-layer").appendChild(img);
+                $("generate").removeAttribute("disabled");
+
+                w = textLayer.width = img.naturalWidth;
+                h = textLayer.height = img.naturalHeight;
+
+                // settingsForm.size.value = Math.floor(Math.sqrt(img.naturalWidth * img.naturalHeight * .9 / settingsForm.text.value.length));
+
+                drawText();
+            };
+
+            img.src = event.target.result;
+        });
+    }
+}
+
+function updateSettings() {
+    if (img && this.name === 'text') {
+        settingsForm.size.value = Math.floor(Math.sqrt(img.naturalWidth * img.naturalHeight * .9 / this.value.length));
+    }
+
+    clearTimeout(timer);
+    timer = setTimeout(drawText, 100);
+}
+
+Array.prototype.forEach.call(document.getElementById("settigns-form").querySelectorAll("input, textarea"), function(input) {
+    if (input.type === "range") {
+        input.nextSibling.innerHTML = input.value;
+
+        input.oninput = function() {
+            this.nextSibling.innerHTML = this.value;
+        };
+
+        input.onchange = function() {
+            this.nextSibling.innerHTML = this.value;
+            updateSettings();
+        };
+    } else {
+        input.onchange = updateSettings;
+    }
+});
+
+selectBtn.onclick = function() {
+    selectFile.click();
+};
+
+selectFile.onchange = function(evt) {
+    fileHandler(evt);
+};
+
+settingsForm.onsubmit = function() {
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = w;
+    canvas.height = h;
+
+    ctx.drawImage(img, 0, 0);
+    drawText(ctx);
+
+    document.getElementById('save').href = canvas.toDataURL();
+    document.getElementById('save').style.display = 'inline-block';
+
+    return false;
+};
+</script>
+</body>
+</html>
